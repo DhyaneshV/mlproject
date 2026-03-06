@@ -12,7 +12,6 @@ from src.logger import logging
 import os
 
 from src.utils import save_object
-from src.components.data_ingestion import DataIngestion
 
 
 @dataclass
@@ -116,12 +115,3 @@ class DataTransformation:
             raise CustomException(e, sys)
 
 
-if __name__ == "__main__":
-
-    obj = DataIngestion()
-
-    train_data, test_data = obj.initiate_data_ingestion()
-
-    data_transformation = DataTransformation()
-
-    data_transformation.initiate_data_transformation(train_data, test_data)
